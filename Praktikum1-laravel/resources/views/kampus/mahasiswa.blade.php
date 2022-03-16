@@ -6,15 +6,10 @@
             <h1>Daftar Mahasiswa</h1>
         </div>
         <ol>
-            <li>
-                Baihaqi
-            </li>
-            <li>
-                Dzikri
-            </li>
-            <li>
-                Fauzol
-            </li>
+            <li>{{$mahasiswa1}}</li>
+            <li>{{$mahasiswa2}}</li>
+            <li>{{$mahasiswa3}}</li>
+            <li>{{$mahasiswa4}}</li>
         </ol>
     </div>
 @endsection

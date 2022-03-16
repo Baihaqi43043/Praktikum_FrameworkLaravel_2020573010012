@@ -6,5 +6,4 @@
             <span class="fs-5 fw-semibold">Welcome to Home Management</span>
         </div>
     </div>
-    <h1 class="text-center">{{$title}}</h1>
 @endsection

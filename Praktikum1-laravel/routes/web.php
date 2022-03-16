@@ -19,14 +19,20 @@ Route::get('/', function () {
 });
 
 Route::get('/home',function(){
-    return view('halaman_home',[
-        'title'=>'halo ini home'
-    ]);
+    return view('home');
 });
 
 Route::get('/mahasiswa',function(){
-    return View::make('mahasiswa');
+    $mahasiswa1 = "Doni salmanan";
+    $mahasiswa2 = "Baihaqi";
+    $mahasiswa3 = "Indra kenz";
+    $mahasiswa4 = "wakgenk";
+    return view('kampus.mahasiswa',compact("mahasiswa1","mahasiswa2","mahasiswa3","mahasiswa4"));
 });
+
+// Route::get('/mahasiswa',function(){
+//     return View::make('mahasiswa');
+// });
 
 Route::get('/profile',function(){
     return view('profile',[
