@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/mahasiswa', function () {
+    $nama='Baihaqi';
+    $nilai = [80,64,30,76,95] ;
+    return view('mahasiswa',compact('nama','nilai'));
+});
