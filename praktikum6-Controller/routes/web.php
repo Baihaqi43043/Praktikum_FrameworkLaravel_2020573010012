@@ -14,17 +14,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[PageController::class,'index']);
 
-// Route::get('/mahasiswa',[PageController::class,'tampil']);
-Route::get('/coba-facade',[PageController::class,'cobaFacade']);
-Route::get('/coba-class',[PageController::class,'cobaclass']);
+Route::get('/mahasiswa',[MahasiswaController::class,'mahasiswa']);
+
+Route::get('/dosen',[MahasiswaController::class,'dosen']);
+
+Route::get('/galery',[MahasiswaController::class,'galery']);
+
+Route::get('/informasi/{jurusan}/{prodi}',[MahasiswaController::class,'informasi']);
+
+// Route::get('/',[PageController::class,'index']);
+
+// // Route::get('/mahasiswa',[PageController::class,'tampil']);
+// Route::get('/coba-facade',[PageController::class,'cobaFacade']);
+// Route::get('/coba-class',[PageController::class,'cobaclass']);
 
 
-Route::get('/mahasiswa',function(){
-    $arrMahasiswa = ["Luhut","Baihaqi","Ulfa Khairuni","Putin"];
-    return ('mahasiswa')->with('mahasiswa',$arrMahasiswa);
-});
+// Route::get('/mahasiswa',function(){
+//     $arrMahasiswa = ["Luhut","Baihaqi","Ulfa Khairuni","Putin"];
+//     return ('mahasiswa')->with('mahasiswa',$arrMahasiswa);
+// });
 // Route::get('/', function () {
 //     return view('welcome');
 // });
