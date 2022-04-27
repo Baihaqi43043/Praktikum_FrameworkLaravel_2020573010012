@@ -18,7 +18,17 @@ Route::get('/', function () {
 });
 
 Route::get('/mahasiswa', function () {
-    $nama='Baihaqi';
-    $nilai = [80,64,30,76,95] ;
-    return view('mahasiswa',compact('nama','nilai'));
+    $arrMahasiswa = ["Baihaqi","Ulfa Khairuni","Luhut","jokowi"];
+
+    return view('mahasiswa')->with('mahasiswa',$arrMahasiswa);
+});
+
+Route::get('/dosen', function () {
+    $arrDosen= ["Maya fitriani, M.M","Prof Silvia","Prof Luhut","Ir.jokowi"];
+
+    return view('dosen')->with('dosen',$arrDosen);
+});
+
+Route::get('galery',function(){
+    return view('galery');
 });
