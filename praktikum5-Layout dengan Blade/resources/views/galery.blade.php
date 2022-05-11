@@ -1,4 +1,9 @@
-<div class="container text-center mt-3 p-4 bg-white">
+{{-- @include('layout.header',['title'=>'Galery']) --}}
+@extends('layout.master')
+@section('title','Galery')
+@section('menuGalery','active')
+    @section('content')
+        <div class="container text-center mt-3 p-4 bg-white">
     <h1 class="mb-3">Gallery</h1>
     <div class="row">
         <div class="col-4">
@@ -12,3 +17,6 @@
         </div>
     </div>
 </div>
+    @endsection
+
+{{-- @include('layout.footer') --}}

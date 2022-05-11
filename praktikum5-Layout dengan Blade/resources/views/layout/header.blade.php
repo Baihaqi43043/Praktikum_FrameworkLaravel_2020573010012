@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Sistem Mahasiswa !</title>
+    <title>{{$title}}</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
