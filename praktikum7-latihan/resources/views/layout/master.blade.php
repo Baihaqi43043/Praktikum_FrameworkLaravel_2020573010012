@@ -7,28 +7,62 @@
 
     <!-- Bootstrap CSS -->
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{asset("style.css")}}">
+    
     <title>@yield('title')</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ">
-            <a class="nav-link @yield('menuMahasiswa')" href="/mahasiswa">Mahasiswa</a>
-              <a class="nav-link @yield('menuDosen')" href="/dosen">Dosen</a>
-              <a class="nav-link @yield('menuGalery')" href="/galery">Galery</a>
-            </div>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light atas">
+      <div class="container-fluid kanan">
+        <a class="navbar-brand logo" href="#"><img src="{{asset('img/logo.png')}}" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold @yield('menuHome') mt-2" aria-current="page" href="home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold @yield('menuAbout') mt-2" href="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold @yield('menuPortofolio') mt-2" href="portofolio">Portofolio</a>
+            </li>
+            <li class="nav-item">
+             
+              <a class="nav-link  @yield('menuContact')" href="contact" > <button type="button" class="btn btn-outline-primary rounded-pill fw-bold" >Contact Us</button></a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
       @yield('content')
-      <footer class="bg-dark py-4 text-white mt-4 ">
-        <div class="container text-center">
-           Sistem Informasi Mahasiswa | Copyright @ {{date("Y")}} Teknik Informatika
+      <footer class="bg-light py-4 mt-2">
+        <div class="container">
+           <div class="row ">
+            <div class="col-4 fs-2 fw-bolder">Ivaa team.
+               <p class="fs-6 fw-bolder " style="color: #868484">Lorem ipsum dolor sit amet, 
+             <br> consectetur adipiscing elit. </p>
+           </div>
+           <div class="col-4 fs-2 fw-bolder">About Us
+            <p class="fs-6 fw-bolder " style="color: #868484">Lorem ipsum dolor sit amet, 
+          <br> consectetur adipiscing elit. </p>
+        </div>
+        <div class="col-4 fs-2 fw-bolder">Get In Touch.
+          <p class="fs-6 fw-bolder " style="color: #868484">Lorem ipsum dolor sit amet, 
+        <br> consectetur adipiscing elit. </p>
+        <div>
+          <a href="#"><img class="fimg" src="{{asset('img/Instagram.png')}}" alt=""></a>
+          <a href="#"><img class="fimg" src="{{asset('img/Facebook.png')}}" alt=""></a>
+          <a href="#"><img class="fimg" src="{{asset('img/YouTube.png')}}" alt=""></a>
+        </div>
+      </div>
+            </div>
         </div>
     </footer>
     

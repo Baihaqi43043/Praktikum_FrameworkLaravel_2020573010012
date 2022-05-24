@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerLatihan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,22 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home',[ControllerLatihan::class,'home']);
 
-Route::get('/mahasiswa', function () {
-    $arrMahasiswa = ["Baihaqi","Ulfa Khairuni","Luhut","jokowi"];
+Route::get('/contact',[ControllerLatihan::class,'contact']);
 
-    return view('mahasiswa')->with('mahasiswa',$arrMahasiswa);
-});
+Route::get('/about',[ControllerLatihan::class,'about']);
 
-Route::get('/dosen', function () {
-    $arrDosen= ["Maya fitriani, M.M","Prof Silvia","Prof Luhut","Ir.jokowi"];
+Route::get('/profile',[ControllerLatihan::class,'profile']);
 
-    return view('dosen')->with('dosen',$arrDosen);
-});
-
-Route::get('galery',function(){
-    return view('galery');
-});
+Route::get('/portofolio',[ControllerLatihan::class,'portofolio']);
