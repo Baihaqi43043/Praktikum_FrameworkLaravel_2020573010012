@@ -1,0 +1,37 @@
+
+.hero{
+    background-image: url(img/hero.png);
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logo{
+    padding: 0px;
+    position: relative;
+    bottom: 2px;
+}
+
+.atas{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.kanan{
+    padding-left: 0;
+}
+
+.fimg{
+    width: 40px;
+    height: 40px;
+}
+
+/*halaman about*/
+.kotak{
+    height: 645px;
+    background: #E5E5E5;
+border-radius: 20px;
+padding-top: 20px;
+}
+/*halaman about*/
