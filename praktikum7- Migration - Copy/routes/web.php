@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ControllerLatihan;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +23,3 @@ Route::get('/about',[ControllerLatihan::class,'about']);
 Route::get('/profile',[ControllerLatihan::class,'profile']);
 
 Route::get('/portofolio',[ControllerLatihan::class,'portofolio']);
-
-Route::get('/cek-object',[MahasiswaController::class,'insert']);
