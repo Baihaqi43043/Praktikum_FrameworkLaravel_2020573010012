@@ -28,7 +28,7 @@
 					<div class="d-table-cell align-middle">
 
 						<div class="text-center mt-4">
-							<h1 class="h2">Welcome back, Charles</h1>
+							<h1 class="h2">Welcome back to <span style="color: #4F1DA0"><strong stye>IVAA.APP</strong></span></h1>
 							<p class="lead">
 								Sign in to your account to continue
 							</p>
@@ -38,8 +38,8 @@
 							<div class="card-body" {{ __('Login') }}>
 								<div class="m-sm-4">
 									<div class="text-center">
-										<img src="img/avatars/avatar.jpg" alt="Charles Hall"
-											class="img-fluid rounded-circle" width="132" height="132" />
+										<img src="img/avatars/user2.png" alt="user"
+											class="rounded-circle" width="132" height="132" />
 									</div>
 									<form method="POST" action="{{ route('login') }}">
                                         @csrf

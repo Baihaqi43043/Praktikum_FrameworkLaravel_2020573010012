@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@section('menuAbout','active')
+@section('menuHome','active')
 <div class="container-fluid p-0">
     <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
 

@@ -26,7 +26,7 @@
             <div class="text-center mt-4">
                 <h1 class="h2">Get started</h1>
                 <p class="lead">
-                    Start creating the best possible user experience for you customers.
+                    Start creating the best possible user experience for you with <span style="color: #4F1DA0"><strong>IVAA.APP</strong></span>.
                 </p>
             </div>
             <div class="card">

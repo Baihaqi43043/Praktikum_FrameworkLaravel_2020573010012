@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ivaaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/karyawan',[ivaaController::class,'karyawan']);
+Route::get('/home',[ivaaController::class,'home']);
+Route::get('/kolam',[ivaaController::class,'kolam']);
+Route::get('/laporan',[ivaaController::class,'laporan']);
+Route::get('/detail-karyawan',[ivaaController::class,'detailKaryawan']);
+Route::get('/detail-kolam',[ivaaController::class,'detailKolam']);
 
 Auth::routes();
 
