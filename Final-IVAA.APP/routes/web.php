@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ivaaController;
+use App\Http\Controllers\KaryawanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/karyawan',[ivaaController::class,'karyawan']);
+Route::get('/karyawan/index',[KaryawanController::class,'index']);
+Route::post('/karyawan', [KaryawanController::class,'filter']);
+Route::post('/karyawan/create', [KaryawanController::class,'store'])->name('/karyawan/create.store');
+Route::post('/karyawan/createpeminjaman', [KaryawanController::class,'storePinjam'])->name('/karyawan/create.storePinjam');
+
+
 Route::get('/home',[ivaaController::class,'home']);
 Route::get('/kolam',[ivaaController::class,'kolam']);
 Route::get('/laporan',[ivaaController::class,'laporan']);
-Route::get('/detail-karyawan',[ivaaController::class,'detailKaryawan']);
-Route::get('/detail-kolam',[ivaaController::class,'detailKolam']);
+
+
+Route::get('/karyawan/create',[KaryawanController::class,'create']);
+Route::get('/karyawan/peminjaman',[KaryawanController::class,'pinjam']);
 
 Auth::routes();
 

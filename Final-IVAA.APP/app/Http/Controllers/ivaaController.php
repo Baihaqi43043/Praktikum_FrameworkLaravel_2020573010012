@@ -11,10 +11,7 @@ class ivaaController extends Controller
         return view('home');
     }
 
-    public function karyawan()
-    {
-        return view('karyawan');
-    }
+  
 
     public function kolam()
     {
