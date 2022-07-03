@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Karyawan extends Model
+class Peminjaman extends Model
 {
+    protected $table ='peminjamans';
     use HasFactory;
-
-    public function Peminjaman(){
-        return $this->hasMany(Peminjaman::class);
-    }
 }

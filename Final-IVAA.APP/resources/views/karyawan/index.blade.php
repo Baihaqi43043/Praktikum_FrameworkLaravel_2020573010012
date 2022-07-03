@@ -13,8 +13,9 @@
     <div class="form-grup row mt-2">
       <div class="col-10 col-md-10 col-lg-3">
         <select name="id_karyawan" class="form-select">
+          <option selected>Pilih Karyawan</option>
            @foreach ($dataKaryawan as $item)
-              <option value="{{ $item->id_karyawan }}" {{ request('item') === $item->nama ? 'selected' : null }}>
+              <option value="{{ $item->id_karyawan }}">
                  {{ $item->nama }}</option>
            @endforeach
         </select>
@@ -50,7 +51,7 @@
 <table class="table table-hover my-0">
   <thead>
     <tr class="table-info">
-      <th scope="col">ID</th>
+      <th scope="col">No</th>
       <th scope="col">Nama</th>
       <th scope="col">Alamat</th>
       <th scope="col">Jumlah</th>
@@ -61,18 +62,21 @@
   <tbody>
   <?php
     $total = 0;
+    $no = 0;
     ?>
     @foreach ($data as $item)
     <?php
     $total += $item->jumlah;
+    $no += 1;
     ?>
     <tr>
-      <th scope="row">{{ $item->id_karyawan }}</th>
+      <td>{{ $no }}</td>
       <td>{{ $item->nama }}</td>
       <td>{{ $item->alamat }}</td>
       <td>{{ currency_IDR($item->jumlah) }}</td>
-      <td><a href="detail-karyawan"><button type="button" class="btn btn-warning btn-sm mb-1 mb-md-0 ">Edit</button></a>
-        <button type="button" class="btn btn-danger btn-sm">Hapus</button></td>
+      <td><a href="{{{url('/karyawan')}}}/{{$item->karyawan_id}}/edit"><button type="button" class="btn btn-warning btn-sm mb-1 mb-md-0 ">Edit</button></a>
+        <a href="{{{url('/karyawan')}}}/{{$item->id_peminjaman}}/hapus"><button type="button" class="btn btn-danger btn-sm mb-1 mb-md-0 ">Hapus</button></a>
+    </td>
     </tr>
     @endforeach
     <tr class="text-center">
