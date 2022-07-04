@@ -18,10 +18,7 @@ class ivaaController extends Controller
         return view('kolam');
     }
 
-    public function laporan()
-    {
-        return view('laporan');
-    }
+  
     public function detailKaryawan()
     {
         return view('detail_Karyawan');

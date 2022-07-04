@@ -3,6 +3,7 @@
 use App\Http\Controllers\ivaaController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\KolamController;
+use App\Http\Controllers\TagihanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,12 +30,21 @@ Route::put('karyawan/{id}',[KaryawanController::class,'update']);
 Route::get('karyawan/{id}/hapus',[KaryawanController::class,'destroy']);
 
 
+Route::post('/kolam/filter/{id}', [KolamController::class,'filter']);
 Route::get('/kolam/index',[KolamController::class,'index']);
-
+Route::get('/kolam/tambahkolam',[KolamController::class,'TmbKolam']);
+Route::post('/kolam/create-tambahkolam', [KolamController::class,'storeKolam'])->name('/kolam/create-tambahkolam.storeKolam');
+Route::get('/kolam/tambahKeluar',[KolamController::class,'TmbKeluar']);
+Route::post('/kolam/create-tambahKeluar', [KolamController::class,'storeKeluar'])->name('/kolam/create-tambahKeluar.storeKeluar');
+Route::get('/kolam/tambahMasuk',[KolamController::class,'TmbMasuk']);
+Route::post('/kolam/create-tambahMasuk', [KolamController::class,'storeMasuk'])->name('/kolam/create-tambahKeluar.storeMasuk');
+Route::get('/kolam/tambahBarang',[KolamController::class,'TmbBarang']);
+Route::post('/kolam/create-tambahBarang', [KolamController::class,'storeBarang'])->name('/kolam/create-tambahBarang.storeBarang');
+Route::get('kolam/{id}/hapus',[KolamController::class,'destroy']);
 
 Route::get('/home',[ivaaController::class,'home']);
 
-Route::get('/laporan',[ivaaController::class,'laporan']);
+Route::get('/tagihan',[TagihanController::class,'tagihan']);
 
 
 Route::get('/karyawan/create',[KaryawanController::class,'create']);

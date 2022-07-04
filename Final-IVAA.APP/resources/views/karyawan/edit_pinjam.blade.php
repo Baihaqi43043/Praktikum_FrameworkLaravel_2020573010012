@@ -23,12 +23,24 @@
                 <label for="floatingTextarea">Keterangan</label>
               </div>
             <div class="col-3">
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary edit">Edit</button>
             </div>
 
           </form>
     </div>
    <script>
+ $('.edit').click(function(){
+  swal({
+  title: "Berhasil Edit Data!",
+  text: "Data Kamu berhasil di edit!",
+  icon: "success",
+  button: "Aww yiss!",
+});
+ });
+
+
+
+
     document.querySelectorAll('input[type-currency="IDR"]').forEach((element) => {
   element.addEventListener('keyup', function(e) {
   let cursorPostion = this.selectionStart;

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->integer('jumlah');
             $table->foreignId('karyawan_id')->constrained('karyawans','id_karyawan');
-            $table->string('keterangan');
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
