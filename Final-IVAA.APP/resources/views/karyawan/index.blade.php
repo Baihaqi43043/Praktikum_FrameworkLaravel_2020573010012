@@ -30,21 +30,7 @@
   <div class="col-12 col-md-2 ms-3 ms-md-0 mt-2 mt-md-0 mb-3 mb-lg-0"> 
     <button style="width: 100%" type="button" class="btn btn-primary">Print Data</button>
   </div>
-  {{-- </div>
-  <div class="col-12 ms-3"> 
-  </div> --}}
-   {{-- <div class="col-12">
-   
-   
-  
-   
-</div>
-<div class="col-12">
-  
-</div> --}}
     </div>
-    
-    
  </form>
  {{-- filter:end --}}
  
@@ -75,7 +61,7 @@
       <td>{{ $item->alamat }}</td>
       <td>{{ currency_IDR($item->jumlah) }}</td>
       <td><a href="{{{url('/karyawan')}}}/{{$item->karyawan_id}}/edit"><button type="button" class="btn btn-warning btn-sm mb-1 mb-md-0 ">Edit</button></a>
-        <a href="{{{url('/karyawan')}}}/{{$item->id_peminjaman}}/hapus"><button type="button" class="btn btn-danger btn-sm mb-1 mb-md-0 ">Hapus</button></a>
+        <a href="#"><button type="button"  class="btn btn-danger btn-sm mb-1 mb-md-0 delete"  data-id="{{$item->id_peminjaman}}" data-nama="{{ $item->nama }}">Hapus</button></a>
     </td>
     </tr>
     @endforeach
@@ -85,4 +71,29 @@
   </tbody>
   </table>
 </div>
+
+<script>
+
+  $('.delete').click( function(){
+    var pinjamid = $(this).attr('data-id');
+    var nama = $(this).attr('data-nama');
+            swal({
+          title: "Yakin Menghapus Data?",
+          text: "Anda akan menghapus data pinjaman dengan nama "+nama+" !",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/karyawan/"+pinjamid+"/hapus"
+            swal("Data Berhasil Di hapus!", {
+              icon: "success",
+            });
+          } else {
+            swal("Data tidak jadi di hapus!");
+          }
+        });
+  });
+</script>
 @endsection
