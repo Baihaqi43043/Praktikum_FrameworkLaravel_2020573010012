@@ -7,12 +7,12 @@
     {{-- filter:start --}}
   <form action="{{url('/kolam/filter')}}" class="row" method="POST">
     @csrf
-    <div class="form-grup row mt-2">
-      <div class="col-10 col-md-10 col-lg-3">
-        <select name="id_karyawan" class="form-select">
+    <div class="form-grup row mt-2 ">
+      <div class="col-10 col-md-10 col-lg-4">
+        <select name="nama_kolam" class="form-select">
           <option selected>Pilih Kolam</option>
            @foreach ($kolam as $item)
-              <option value="{{ $item->id_kolam }}">
+              <option value="{{ $item->nama_kolam }}">
                  {{ $item->nama_kolam }}</option>
            @endforeach
         </select>
@@ -20,9 +20,12 @@
      <div class="col-2 col-md-1 ">
       <button type="submit" class="btn btn-primary mb-3">Filter</button>
    </div>
+   <div class="col-12 mb-1 offset-md-2 col-md-2 ">
+    <a href="{{url('kolam/tambahkolam')}}"><button style="width: 100%" type="button" class="btn btn-primary">Print Data</button></a>
+  </div>
  </form>
  {{-- filter:end --}}
-      <div class="row">
+      <div class="row ">
         <div class="col-12 mb-1 col-md-2">
           <a href="{{url('kolam/tambahkolam')}}"><button style="width: 100%" type="button" class="btn btn-primary">Tambah Kolam</button></a>
         </div>

@@ -43,9 +43,8 @@
                 <input id="isi_tebar" type="text" name="jumlah_tebar" class="form-control "id="exampleInputharga">
               </div>
             <div class="col-3 ">
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary tambah">Tambah</button>
             </div>
-           
           </form>
     </div>
 </div>
@@ -85,5 +84,14 @@
     }
   });
 });
+
+$('.tambah').click(function(){
+  swal({
+  title: "Data Berhasil di tambah!",
+  text: "Data Kamu berhasil di tambah!",
+  icon: "success",
+  button: "Aww yiss!",
+});
+ });
    </script>
 @endsection

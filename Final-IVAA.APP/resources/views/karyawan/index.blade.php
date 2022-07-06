@@ -4,9 +4,6 @@
 @section('menuKaryawan','active')
 <div class="container-fluid p-0">
     <h1 class="h3 mb-3"><strong>Karyawan</strong> Dashboard</h1>
-    
-
- 
   {{-- filter:start --}}
   <form action="{{url('/karyawan')}}" class="row" method="POST">
     @csrf
@@ -60,7 +57,7 @@
       <td>{{ $item->nama }}</td>
       <td>{{ $item->alamat }}</td>
       <td>{{ currency_IDR($item->jumlah) }}</td>
-      <td><a href="{{{url('/karyawan')}}}/{{$item->karyawan_id}}/edit"><button type="button" class="btn btn-warning btn-sm mb-1 mb-md-0 ">Edit</button></a>
+      <td><a href="{{url('/karyawan')}}/{{$item->karyawan_id}}/edit"><button type="button" class="btn btn-warning btn-sm mb-1 mb-md-0 ">Edit</button></a>
         <a href="#"><button type="button"  class="btn btn-danger btn-sm mb-1 mb-md-0 delete"  data-id="{{$item->id_peminjaman}}" data-nama="{{ $item->nama }}">Hapus</button></a>
     </td>
     </tr>

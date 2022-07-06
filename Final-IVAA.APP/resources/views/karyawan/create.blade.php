@@ -21,12 +21,20 @@
               <input type="text" name="umur" class="form-control" id="exampleInputUmur">
             </div>
             <div class="col-3">
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary tambah">Tambah</button>
             </div>
             
           </form>
     </div>
-   
-  
 </div>
+<script>
+    $('.tambah').click(function(){
+  swal({
+  title: "Data Berhasil di tambah!",
+  text: "Data Kamu berhasil di tambah!",
+  icon: "success",
+  button: "Aww yiss!",
+});
+ });
+</script>
 @endsection

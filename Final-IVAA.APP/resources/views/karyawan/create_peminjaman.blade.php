@@ -3,7 +3,10 @@
 @section('content')
 @section('menuKaryawan','active')
 <div class="container-fluid p-0">
-    {{$mytime = Carbon\Carbon::now()->toDateString();}}
+  @php
+       {{$mytime = Carbon\Carbon::now()->toDateString();}}
+  @endphp
+   
     <div class="col-12 col-md-8 offset-md-2">
         <h1 class="text-center"><strong>Tambah Peminjaman Baru</strong></h1>
         @csrf
@@ -31,12 +34,22 @@
                 <label for="floatingTextarea">Keterangan</label>
               </div>
             <div class="col-3">
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary tambah">Tambah</button>
             </div>
             
           </form>
     </div>
    <script>
+     $('.tambah').click(function(){
+  swal({
+  title: "Data Berhasil di tambah!",
+  text: "Data Kamu berhasil di tambah!",
+  icon: "success",
+  button: "Aww yiss!",
+});
+ });
+
+
     document.querySelectorAll('input[type-currency="IDR"]').forEach((element) => {
   element.addEventListener('keyup', function(e) {
   let cursorPostion = this.selectionStart;

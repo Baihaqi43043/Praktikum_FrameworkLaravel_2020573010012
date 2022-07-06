@@ -21,6 +21,14 @@ class KolamController extends Controller
          return view('kolam.index',compact('data','kolam'));
     }
 
+    public function filter()
+    {
+        $kolam = kolam::all();
+        $nama = request()->get('nama_kolam');
+        $data = DB::table('log_kolams')->where('nama_kolam','LIKE','%'.$nama.'%')->get();
+         return view('kolam.index',compact('data','kolam'));
+    }
+
     public function TmbKolam()
     {
         return view('kolam.create_kolam');
@@ -97,18 +105,4 @@ class KolamController extends Controller
       return redirect('kolam/index');
     }
 
-    public function filter()
-    {
-        // $dataKaryawan = karyawan::all();
-
-        // $id = request()->get('id_karyawan');
-
-        // $data = karyawan::join('peminjamans','karyawans.id_karyawan','=','peminjamans.karyawan_id')
-        // ->select('peminjamans.*','karyawans.nama','karyawans.alamat')
-        // ->where('peminjamans.karyawan_id','=', $id)
-        // ->get();
-
-        // return view('karyawan.index',compact('data','dataKaryawan'));
-        return "halo filter";
-    }
 }

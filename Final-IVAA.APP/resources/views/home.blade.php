@@ -23,7 +23,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h1 class="mt-1 mb-3">Rp20.382.000</h1>
+                                @foreach ($datamasuk as $item)
+                                <h2 class="mt-1 mb-3">{{currency_IDR($item->count)}}</h2>
+                                @endforeach
+                               
                             </div>
                         </div>
                         <div class="card">
@@ -39,7 +42,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h1 class="mt-1 mb-3">12</h1>
+                               
+                                <h1 class="mt-1 mb-3">{{$karyawan}}</h1>
+                                
                             </div>
                         </div>
                     </div>
@@ -57,7 +62,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h1 class="mt-1 mb-3">Rp.10.300.000</h1>
+                                @foreach ($datakeluar as $item)
+                                <h2 class="mt-1 mb-3">{{currency_IDR($item->count)}}</h2>
+                                @endforeach
                             </div>
                         </div>
                         <div class="card">
@@ -77,7 +84,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h1 class="mt-1 mb-3">30</h1>
+                                <h1 class="mt-1 mb-3">{{$kolam}}</h1>
                             </div>
                         </div>
                     </div>

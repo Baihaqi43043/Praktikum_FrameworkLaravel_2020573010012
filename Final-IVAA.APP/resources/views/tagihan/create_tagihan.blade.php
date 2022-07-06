@@ -1,19 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-@section('menuKolam','active')
+@section('menuTagihan','active')
 <div class="container-fluid p-0">
     <div class="col-12 col-md-8 offset-md-2">
-        <h1 class="text-center"><strong>Tambah Barang Baru</strong></h1>
-        <form action="{{url('/kolam/create-tambahBarang')}}" method="POST">
-            @csrf
+       @php
+           {{$mytime = Carbon\Carbon::now()->toDateString();}}
+       @endphp
+        <h1 class="text-center"><strong>Tambah Tagihan Baru</strong></h1>
+               <form action="{{url('/tagihan/create-tagihan')}}" method="POST">
+                @csrf
             <div class="mb-3">
-                <label for="exampleInputJumlah" class="form-label">Nama Barang</label>
-                <input type="text" name="nama" class="form-control input-currency"id="exampleInputBarang">
-              </div>
+              <label for="exampleInputnama" class="form-label">Nama Rekening</label>
+              <input type="text" name="namarek" class="form-control" id="exampleInputnama" aria-describedby="emailHelp">
+            </div>
             <div class="mb-3">
-                <label for="exampleInputJumlah" class="form-label">Harga Barang</label>
-                <input type="text" name="harga" class="form-control input-currency" type-currency="IDR" placeholder="Rp" id="exampleInputJumlah">
+              <label for="exampleInputAlamat" class="form-label">Tanggal</label>
+              <input type="date" name="date" value="{{$mytime}}" class="form-control" id="exampleInputAlamat">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputJumlah" class="form-label">Jumlah</label>
+                <input type="text" name="jumlah" class="form-control input-currency" type-currency="IDR" placeholder="Rp" id="exampleInputJumlah">
               </div>
             <div class="col-3">
                 <button type="submit" class="btn btn-primary tambah">Tambah</button>
@@ -32,8 +40,7 @@
 });
  });
 
-
-    document.querySelectorAll('input[type-currency="IDR"]').forEach((element) => {
+ document.querySelectorAll('input[type-currency="IDR"]').forEach((element) => {
   element.addEventListener('keyup', function(e) {
   let cursorPostion = this.selectionStart;
     let value = parseInt(this.value.replace(/[^,\d]/g, ''));
@@ -51,5 +58,5 @@
     }
   });
 });
-   </script>
+</script>
 @endsection

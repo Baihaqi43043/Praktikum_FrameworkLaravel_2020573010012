@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pengeluaran;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ivaaController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $datakeluar = pengeluaran::select('SELECT  sum(harga*jumlah) FROM `pengeluarans`')->get();
+
+        return $datakeluar;
+        //  return view('home',['keluar'=>$datakeluar]);
     }
 
   
